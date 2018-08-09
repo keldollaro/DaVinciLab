@@ -9,3 +9,6 @@ Students also are now able to check when there will be their next lab lesson.
 
 Hope you like it!
 Do not esitate to commit your suggestion
+
+P.s: I'm currently working on my own copy for security reason. As soon as i completed 
+my task i'll commit the project
