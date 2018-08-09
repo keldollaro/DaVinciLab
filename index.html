@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it" ng-app="daVinciLab">
+<head>
+	<title>DaVinciLab</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.css" />
+	<!--<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">-->
+	<link rel="stylesheet" href="assets/css/oneui.css">
+	<link rel="stylesheet" href="assets/css/daVinciLab.css">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Sedgwick+Ave" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
+	
+	<link rel="icon" href="assets/img/davinciLogo.png">
+	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+</head>
+<body>
+	
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar" ng-controller="NavBarController">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#/">DaVinciLab</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/labs">Laboratori</a></li>
+        <li><a href="#/classi">Classi</a></li>
+        <li ng-if="!mostraLoginButton"><a href="#/login">Accesso <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+		<li ng-if="mostraLoginButton" class="dropdown">
+        	<a class="dropdown-toggle" data-toggle="dropdown">
+				Salve, {{cognome}} {{nome}}<span class="caret"></span>
+			</a>
+        	<ul class="dropdown-menu">
+          		<li><a ng-click="logout()"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+          		<li><a href="#/doc/info"><span class="glyphicon glyphicon-edit"></span> Modifica dati</a></li>
+				 <li><a href="#/doc"><span class="glyphicon glyphicon-user"></span> lab.{{cognome.replace(" ", "")}}();</a></li>
+        	</ul>
+      	</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div ng-view></div>
+
+<footer class="container-fluid text-center">
+  <a href="#homeP" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <h4><strong>Web App sviluppata da Kelvin Olaiya per il Liceo Scientifico L.Da Vinci di Jesi</strong></h4>
+  <a href="/admin" class="btn-link btn">Admin</a> 
+</footer>
+
+<!-- scripts -->
+
+	<!--Angular-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+	<!--fine angular-->
+	
+	<!--**************************************************************************************************-->
+	
+	<!--applicazione-->
+		<script src="config.js"></script>
+		<script src="app.js"></script>
+		<script src="moduli/main/services.js"></script>
+		<script src="assets/scripts/js/settings.js"></script>
+		<script src="moduli/main/MainController.js"></script>
+		<script src="moduli/laboratorio/LaboratorioController.js"></script>
+		<script src="moduli/authentication/LoginController.js"></script>
+		<script src="moduli/classi/ClassiController.js"></script>
+		<script src="moduli/docente/DocenteController.js"></script>
+		<script src="moduli/docente/DatiDocenteController.js"></script>
+	<!--fine applicazione-->
+	
+	<!--**************************************************************************************************-->
+	
+	<!--JQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!--fine JQuery-->
+	
+	<!--**************************************************************************************************-->
+	
+	<!--bootstrap-->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!--fine bootstrap-->
+	
+	<!--**************************************************************************************************-->
+	
+	<!--custom-->
+		<script src="assets/scripts/jQuery/daVinciLab.js"></script>
+		<script src="assets/scripts/jQuery/jquery.scrollLock.min.js"></script>
+		<script src="assets/scripts/jQuery/jquery.slimscroll.min.js"></script>
+		<!-- sweetAlert -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
+		<!-- fine sweetAlert -->
+	<!--fine custom-->
+	
+<!-- fine scripts -->
+</body>
+</html>	
